@@ -1,0 +1,22 @@
+version: "3.1"
+
+services: 
+  web:
+    container_name: react-web
+    build:
+      context: ./web
+      dockerfile: dockerfile
+    ports: 
+      - 3000:3000
+    networks:
+      - react-net
+    volumes: 
+      - ./web:/react/web
+    env_file:
+      - ./ops/localhost.env
+
+networks:
+  react-net:
+    driver: bridge
+
+
