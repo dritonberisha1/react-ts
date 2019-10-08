@@ -16,7 +16,7 @@ class Card extends Component {
         this.setState({ ...this.props });
     }
 
-    switchTitle = () => {
+    switchTitleWithBody = () => {
         this.setState({
             title: this.state.body,
             body: this.state.title
@@ -29,7 +29,7 @@ class Card extends Component {
                 <div className="card-body">
                     <h5 className="card-title text-capitalize">{this.state.title}</h5>
                     <p className="card-text">{this.state.body}</p>
-                    <button className="btn btn-primary" onClick={this.switchTitle}>Update</button>
+                    <button className="btn btn-primary" onClick={this.switchTitleWithBody}>Update</button>
                 </div>
             </div>
         )
